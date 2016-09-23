@@ -1,12 +1,11 @@
-var React = require('react-native')
+import React, {Component,PropTypes} from 'react';
 var styles = require('./style')
 
 var {
   View,
   Text,
-  TouchableOpacity,
-  PropTypes
-} = React
+  TouchableOpacity
+} = require('react-native');
 
 var Spinner = React.createClass({
   propTypes: {
@@ -88,7 +87,7 @@ var Spinner = React.createClass({
         { borderColor: this.props.showBorder ? this.props.color : 'transparent' },
         { width: this.props.width } ]}>
         <TouchableOpacity
-          style={[styles.btn,
+          style={[styles.btn,styles.btnLeft,
             { backgroundColor: this.props.color },
             { borderColor: this.props.showBorder ? this.props.color : 'transparent' },
             { height: this.props.height } ]}
@@ -102,7 +101,7 @@ var Spinner = React.createClass({
           <Text style={[styles.numText, {color: this.props.numColor, fontSize: this.props.fontSize}]}>{this.state.num}</Text>
         </View>
         <TouchableOpacity
-          style={[styles.btn,
+          style={[styles.btn,styles.btnRight,
             { backgroundColor: this.props.color },
             { borderColor: this.props.showBorder ? this.props.color : 'transparent' },
             { height: this.props.height }]}
